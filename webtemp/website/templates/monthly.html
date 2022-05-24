@@ -1,0 +1,64 @@
+{% extends "base.html" %} 
+{% block title %}Montly{% endblock title%}
+{% block head%}
+<!-- Data Table -->
+  <!-- <script type = "text/javascript"  src="https://cdn.datatables.net/plug-ins/1.10.15/dataRender/datetime.js"></script> -->
+  <script src="{{ url_for('static', filename='js/plotly-latest.min.js') }}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+{% endblock%}
+
+{% block content %}
+        <br><br>
+        <div class="row">
+          <div class="col-sm-1"></div>
+          <div class="col-sm-8">
+            <div class="card-header bg-primary text-white text-align:center">
+              <h2 class='card-title'>Greenhouse Temprature by Month</h2>
+            </div>
+            <br>
+            <div class="card-body">
+              <div class="chart" id="bargraph">
+                <script>
+                    var graphs = {{plot | safe}};
+                    Plotly.plot('bargraph',graphs);
+                </script>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-1"></div>
+        </div>
+        <br>
+<!--         <div class="card-footer text-align:center">
+
+          <div class="dropdown">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Dropdown</button>
+          <div class="dropdown-menu">
+            {% for m in month %}
+            <a class="dropdown-item" href="#">{{m}}</a>
+            {% endfor %} -->
+
+          </div>
+          </div> 
+          
+        </div>
+        <br><br>
+
+{% endblock%}
+
+{% block footer %}
+<!--   <script type="text/javascript" charset="utf8">
+  $(".dropdown").on("show.bs.dropdown", function(event){
+  var x = $(event.relatedTarget).text(); // Get the text of the element
+  alert(x);
+  });</script>
+
+  <script>
+  $(document).ready(function(){
+    $(".dropdown-toggle").dropdown();
+  });
+  </script> -->
+
+  <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  
+{% endblock %}
+https://www.youtube.com/watch?v=lhbSD1Jba0Q

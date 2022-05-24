@@ -1,0 +1,11 @@
+[Unit]
+Description=Service for temprature data collection
+After=multi-user.target
+
+[Service]
+User=markone
+WorkingDirectory=/home/markone
+ExecStart=/usr/bin/python3 /home/markone/webtemp/datalogger.py
+
+[Install]
+WantedBy=multi-user.target
