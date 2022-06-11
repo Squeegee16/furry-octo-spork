@@ -1,0 +1,36 @@
+{% extends "base.html" %} 
+{% block title %}Dashboard{% endblock title%}
+{% block head%}
+<!-- Data Table -->
+
+{% endblock%}
+
+{% block content %}
+        <br><br>
+        <br><br>
+        <div class="row">
+          <div class="col-sm-1"></div>
+          <div class="col-sm-8">
+            <div class="card-header bg-primary text-white text-align:center">
+              <h2 class='card-title'>Thermometer</h2>
+            </div>
+            <div class="card-body bg-dark text-white text-align:center">
+              {% if t <= 10 %}
+                <h4><i class="fa fa-thermometer-2" style="color:lightblue;"></i>  {{t}} °C</h4>
+              {% elif t >= 26 %}
+                <h4><i class="fa fa-thermometer-2" style="color:red;"></i>  {{t}} °C</h4>
+              {%else %}
+                <h4><i class="fa fa-thermometer-2" style="color:green;"></i>  {{t}} °C</h4>
+              {% endif %}
+            </div>
+          </div>
+          <div class="col-sm-1"></div>
+        </div>
+        <br><br>
+{% endblock%}
+
+{% block footer %}
+  <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+{% endblock %}
+https://www.youtube.com/watch?v=lhbSD1Jba0Q

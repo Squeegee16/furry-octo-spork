@@ -1,0 +1,11 @@
+[Unit]
+Description=Flask themometer
+After=multi-user.target
+
+[Service]
+User=markone
+WorkingDirectory=/home/markone
+ExecStart=/usr/bin/python3 /home/markone/webtemp/run.py
+
+[Install]
+WantedBy=multi-user.target
